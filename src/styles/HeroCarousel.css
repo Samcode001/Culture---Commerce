@@ -1,0 +1,148 @@
+/* Hero Carousel styles */
+.hero-carousel {
+  /* --max-width: 1440px;
+  --container-padding: 0rem;
+
+  width: min(var(--max-width), 100% - var(--container-padding));
+  margin-inline: auto; */
+  /* outline: 2px solid red; */
+  /* display: none; */
+  overflow: hidden; /* Ensure no overflow */
+  position: relative;
+}
+
+/* Style for carousel images */
+.slick-slide img {
+  width: 100%;
+  height: auto;
+}
+
+.hero-item {
+  position: relative;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  width: 55vw;
+  height: 45vh;
+  position: absolute;
+  top: 14rem;
+  right: 2rem;
+  z-index: 99;
+  align-items: center;
+  justify-content: center;
+  /* outline: 2px solid red; */
+  text-align: center;
+}
+
+.hero-content > h1 {
+  font-size: clamp(1.2rem, 8vw, 6rem);
+  font-size: 6rem;
+  font-weight: 900;
+  color: white;
+  margin: 0;
+  /* max-width: max-content; */
+  line-height: 1;
+}
+.hero-content > h2 {
+  font-size: clamp(1rem, 6vw, 1.8rem);
+  /* font-size: 1.8rem; */
+  font-weight: 500;
+  color: white;
+  /* max-width: max-content; */
+}
+
+.hero-content > button {
+  background-color: black;
+  color: white;
+  outline: 2px solid white;
+  border: none;
+  padding: 0.5em 2em;
+  border-radius: 2rem;
+  margin-top: 1rem;
+  transition: all 300ms ease-in-out;
+  /* font-size: clamp(0.8rem, 2vw, 1.3rem); */
+  font-size: 1.3rem;
+}
+.hero-content > button:is(:hover, :focus) {
+  background-color: orangered;
+  outline: none;
+}
+
+.content-1 {
+  top: 14rem;
+  right: 2rem;
+}
+.content-2 {
+  top: 14rem;
+  left: 2rem;
+}
+.content-2 > h1 {
+  color: black !important;
+}
+.content-2 > h2 {
+  color: black !important;
+}
+.content-2 > button {
+  color: black !important;
+  background-color: white;
+  color: black;
+  outline: 2px solid black;
+}
+.content-3 {
+  top: 14rem;
+  right: 2rem;
+}
+
+@media (max-width: 67em) {
+  .hero-content > h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-content > h2 {
+    font-size: 1.2rem;
+  }
+  .hero-content > button {
+    font-size: 1.2rem;
+  }
+
+  .content-1 {
+    top: -2rem;
+    right: 0rem;
+  }
+  .content-2 {
+    top: -2rem;
+    left: 0rem;
+  }
+  .content-3 {
+    top: -2rem;
+    right: 0rem;
+  }
+}
+
+@media (max-width: 47em) {
+  .hero-content > h1 {
+    font-size: 1.2rem;
+  }
+
+  .hero-content > h2 {
+    font-size: 1rem;
+  }
+  .hero-content > button {
+    font-size: 0.8rem;
+  }
+
+  .content-1 {
+    top: -100px;
+    right: 0rem;
+  }
+  .content-2 {
+    top: -100px;
+    left: 0rem;
+  }
+  .content-3 {
+    top: -100px;
+    right: 0rem;
+  }
+}

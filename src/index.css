@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
+
+:root {
+  --clr-primary-300: hsl(192, 70%, 51%);
+  --clr-primary-600: hsl(136, 65%, 51%);
+  --clr-primary-900: hsl(233, 26%, 24%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(0, 0%, 98%);
+  --clr-neutral-300: hsl(220, 16%, 96%);
+  --clr-neutral-500: hsl(233, 8%, 62%);
+
+  --clr-gradient-primary: linear-gradient(
+    to right,
+    var(--clr-primary-600),
+    var(--clr-primary-300)
+  );
+
+  --ff-primary: "Public Sans", sans-serif;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+/* --------------------------- General Styling -------------------------------------- */
+body {
+  font-size: 18px;
+  font-family: var(--ff-primary);
+}
+
+main {
+  /* for thoe mockups to overflow  */
+  position: relative;
+  overflow: hidden;
+}
+
+.button {
+  width: fit-content;
+  border: 0;
+  line-height: 1;
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+  background: rgba(0, 0, 0, 0.841);
+  color: var(--clr-neutral-100);
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+  position: relative;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  border-radius: 5rem;
+  transition: 150ms;
+}
+
+.button:hover::after {
+  opacity: 0.4;
+}
+
+.button:active {
+  background-color: whitesmoke;
+  border: 1px solid black;
+  color: black;
+}
+
+/* h1 {
+  font-size: clamp(1.8rem, 3vw, 5rem);
+  max-width: 13ch;
+  margin-inline: auto;
+  line-height: 1.2;
+  color: var(--clr-primary-900);
+  padding-block: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--clr-primary-900);
+  max-width: 16ch;
+  margin-inline: auto;
+}
+
+h3 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--clr-primary-900);
+}
+
+p {
+  color: var(--clr-neutral-500);
+  max-width: 35ch;
+  margin-inline: auto;
+  text-align: center;
+}
+
+@media (min-width:47em) {
+
+  h1 {
+    text-align: start;
+    margin-inline: 0;
+  }
+
+  h2 {
+    text-align: start;
+    margin-inline: 0;
+    max-width: 18ch;
+  }
+
+  h3 {
+    text-align: start;
+  }
+
+  p {
+    text-align: start;
+    margin-inline: 0;
+    max-width: 58ch;
+  }
+} */
+
+/* --------------------------- CSS Reset ------------------------------------------ */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------------------- Utility Classes ------------------------------------- */
+.visually-hidden {
+  position: absolute;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.display-sm-none {
+  display: none;
+}
+
+.display-md-none {
+  display: block;
+}
+
+.padding-block-200 {
+  padding: 2rem;
+}
+
+.container {
+  --max-width: 1440px;
+  --container-padding: 0rem;
+
+  width: min(var(--max-width), 100% - var(--container-padding));
+  margin-inline: auto;
+}
+
+.even-columns {
+  display: grid;
+}
+
+.hidden-scrollbar {
+  scrollbar-width: thin; /* "auto" can also be used */
+  scrollbar-color: #888 transparent; /* color of the thumb and the track */
+}
+
+/* Style the thumb */
+.hidden-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #888; /* color of the thumb */
+  border-radius: 10px; /* roundness of the thumb */
+}
+
+/* Style the track */
+.hidden-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent; /* color of the track */
+}
+
+@media (min-width: 47em) {
+  .display-sm-none {
+    display: block;
+  }
+
+  .display-md-none {
+    display: none;
+  }
+
+  .display-md-inline-flex {
+    display: inline-flex;
+  }
+
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    gap: 1.2rem;
+  }
+}
+
+/* ------------------- toast ---------------- */
+
+.Toastify__toast-container--bottom-left {
+  bottom: 60px;
+}

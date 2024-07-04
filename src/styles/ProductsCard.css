@@ -1,0 +1,99 @@
+.card-container {
+  width: 18rem;
+  height: 32rem;
+  outline: 2px solid gray;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  border-radius: 1rem;
+  z-index: 1;
+}
+
+.card-image {
+  width: 18rem;
+  height: 17rem;
+  border-radius: 1rem;
+  object-fit: contain;
+  padding: 0.4rem 0.3rem;
+}
+
+.card-details {
+  text-decoration: none;
+}
+.card-details > * {
+  padding-inline: 1rem;
+  margin-bottom: 5px;
+  color: black;
+  font-weight: 500;
+}
+
+.side-options {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stars {
+  display: flex;
+  gap: 5px;
+}
+.buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-buy {
+  width: fit-content;
+  border: 0;
+  line-height: 1;
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+  background: white;
+  color: black;
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+  position: relative;
+  outline: 2px solid black;
+}
+
+.button-buy::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: black;
+  opacity: 0;
+  border-radius: 5rem;
+  transition: 150ms;
+  color: white;
+}
+
+.button-buy:hover::after {
+  opacity: 0.4;
+}
+/* 
+@media (max-width: 57em) {
+  .card-container {
+    width: 14rem;
+    height: 22rem;
+  }
+
+  .card-image {
+    width: 10rem;
+    height: 9rem;
+  }
+
+  .buttons {
+    gap: 8px;
+  }
+
+  .card-button{
+    font-size: clamp(1rem,2vw,1.2rem);
+  }
+
+} */

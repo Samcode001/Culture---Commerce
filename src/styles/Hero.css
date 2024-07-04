@@ -1,0 +1,259 @@
+.cta {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem 4rem;
+  background-color: rgb(248, 248, 248);
+  border-bottom: 1px solid gray;
+}
+
+.cta-items {
+  display: flex;
+  gap: 33px;
+  /* outline: 1px solid red; */
+}
+
+.cta-items > :nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.cta-items > :nth-child(1) {
+  width: 3rem;
+  aspect-ratio: 1/0.8;
+}
+
+.cta-items > :nth-child(2) > span {
+  font-size: 1rem;
+  color: gray;
+}
+
+.cta-items > :nth-child(2) > h4 {
+  font-size: 1rem;
+  color: black;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ----------- cta2------------------- */
+
+.cta2 {
+  width: 100%;
+  padding-block: 3rem;
+  text-align: center;
+}
+
+.cta2 > h2 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 650;
+}
+.cta2 > h4 {
+  font-size: clamp(0.8rem, 3vw, 1.2rem);
+  font-weight: 300;
+  color: gray;
+}
+
+.cta2-grid {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 8rem;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.cta2-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* outline: 2px solid red; */
+}
+
+.cta2-items > h4 {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+}
+.cta2-items > h2 {
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  line-height: 1.1;
+  font-weight: 600;
+}
+.cta2-items > p {
+}
+
+.cta2-items > * {
+  padding-block: 0.5rem;
+}
+
+/* -------------------------------------- */
+
+.cta3 {
+  text-align: center;
+}
+
+.cta3 > img {
+  display: block;
+  margin: 0 auto;
+}
+.cta3-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 12rem;
+  /* outline: 2px solid red; */
+  position: relative;
+  left: 0rem;
+  top: -6.5rem;
+}
+
+.cta3-items > h2 {
+  font-size: 1rem;
+}
+
+.cta3-items > span {
+  font-size: 0.86rem;
+  color: gray;
+}
+
+.cta3-line1 {
+  width: 5rem;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.85);
+  position: absolute;
+  top: 3rem;
+  left: -2.2rem;
+  transform: rotate(90deg);
+}
+
+.cta3-line2 {
+  width: 12rem;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.85);
+  position: absolute;
+  top: 6rem;
+  left: -5.65rem;
+  transform: rotate(90deg);
+}
+
+.cta3-circle1 {
+  width: 0.7rem;
+  height: 0.7rem;
+  background-color: black;
+  border-radius: 100vmax;
+  position: absolute;
+  top: -5.6rem;
+  left: 4.5rem;
+}
+.cta3-circle2 {
+  width: 0.7rem;
+  height: 0.7rem;
+  background-color: black;
+  border-radius: 100vmax;
+  position: absolute;
+  top: -13.2rem;
+  left: 5rem;
+}
+
+.cta3 > :nth-child(4) {
+  display: grid;
+  justify-content: center;
+  gap: 7rem;
+  row-gap: 0px;
+}
+
+.item-1 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  /* position: relative;
+  top: -5rem; */
+}
+.item-2 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  position: relative;
+  top: -9rem;
+}
+.item-3 {
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+.item-4 {
+  grid-column: 4/5;
+  grid-row: 2/3;
+  position: relative;
+  top: -9rem;
+}
+
+.cta3-circle1::before {
+  background-color: rgb(239, 44, 44, 0.7);
+  content: "";
+  top: calc(50% - 5px);
+  left: calc(50% - 5px);
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+  border-radius: 50%;
+  position: absolute;
+  animation: burst-animation 1.5s infinite;
+  animation-fill-mode: forwards;
+  z-index: 0;
+}
+
+.cta3-circle2::before {
+  background-color: rgb(239, 44, 44, 0.7);
+  content: "";
+  top: calc(50% - 5px);
+  left: calc(50% - 5px);
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+  border-radius: 50%;
+  position: absolute;
+  animation: burst-animation 1.5s infinite;
+  animation-fill-mode: forwards;
+  z-index: 0;
+}
+
+@keyframes burst-animation {
+  from {
+    opacity: 1;
+    transform: scale(2);
+  }
+  to {
+    opacity: 0;
+    transform: scale(5);
+  }
+}
+
+/* ------------------------------- */
+
+.items-section {
+  padding-block: 3rem;
+  /* outline: 2px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 62em) {
+  .cta3 {
+    display: none;
+  }
+
+  .cta {
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cta2-grid {
+    flex-direction: column;
+  }
+}

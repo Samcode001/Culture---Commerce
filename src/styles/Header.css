@@ -1,0 +1,528 @@
+/* ---------------------- Navbar ------------------------------------- */
+
+.primary-header {
+  /* padding: 1.5rem; */
+  position: relative;
+  /* inset: 0; */
+  /* outline: 2px solid red; */
+}
+
+.logo img {
+  width: clamp(8rem, 15vw, 12rem);
+  position: relative;
+  left: -4rem;
+}
+
+.nav-list {
+  /* background-color: var(--clr-neutral-100); */
+  /* height: 100%;
+  outline: 1px solid red;
+  padding: 10rem 0rem; */
+  padding: 3rem 0rem;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: var(--clr-primary-900);
+  margin-block-end: 1rem;
+  display: block;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* width: 15rem; */
+}
+
+.mobile-nav-toggle {
+  display: block;
+  width: 2rem;
+  aspect-ratio: 1;
+  background-image: url(../assets/icon-hamburger.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+}
+
+.mobile-nav-toggle[aria-expanded="true"] {
+  background-image: url(../assets/icon-close.svg);
+  position: absolute;
+  right: -2rem;
+  z-index: 99999;
+}
+
+.primary-navigation {
+  display: none;
+  width: 80%;
+  /* aspect-ratio: 1/0.5; */
+  margin-inline: auto;
+  padding: 4rem 1rem;
+  position: fixed;
+  inset: 0rem 0rem 0 8rem;
+  /* inset: 0rem 0 0 0; */
+  background-color: var(--clr-neutral-100);
+  padding-block: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0em 0em 8em 10em rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  transition: all 350ms ease-in-out;
+}
+
+.primary-navigation[aria-expanded="true"] {
+  display: block;
+}
+
+.search-bar {
+  width: 90%;
+  margin: auto;
+  /* height: max-content; */
+  position: fixed;
+  top: 0;
+  left: 0%;
+  padding: 14px 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* outline: 2px solid red; */
+  z-index: 10000000;
+  background-color: whitesmoke;
+}
+
+.search-items-container {
+  outline: 1px solid gray;
+  position: absolute;
+  top: 4rem;
+  width: 70%;
+  /* height: 100%; */
+  background-color: white;
+  border-radius: 1rem;
+  z-index: 100000000000;
+}
+
+.search-items {
+  /* outline: 2px solid red; */
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 8px 1rem;
+  border-bottom: 1px solid gray;
+  border-radius: 1rem;
+  position: relative;
+  z-index: 100000000;
+  /* justify-content: space-between; */
+}
+
+.search-items img {
+  width: 2rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.search-items-deatils {
+  display: flex;
+  flex-direction: column;
+  /* gap: 1rem; */
+}
+
+.search-items-deatils h1 {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: black;
+}
+.search-items-deatils span {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.search-bar > input {
+  height: 3rem;
+  margin-left: 8rem;
+  padding: 5px;
+  border-radius: 4rem;
+  outline: 2px solid rgb(28, 189, 136);
+  border: none;
+}
+
+.search-bar > :nth-child(2) {
+  width: 4rem;
+  aspect-ratio: 1/0.5;
+  outline: none;
+  background-color: rgb(50, 203, 152);
+  margin-inline: 1rem;
+  padding: 15px;
+  border-radius: 3rem;
+}
+.search-bar > :nth-child(3) {
+  width: 1.5rem;
+  aspect-ratio: 1/1.5;
+  outline: none;
+  border: none;
+  background: url(../assets/icon-close.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-inline: 1rem;
+  position: absolute;
+  left: 2rem;
+  top: 20px;
+  /* display: none; */
+}
+
+.right-nav {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  outline: 1px solid gray;
+  width: 100%;
+  padding: 1rem;
+  background-color: white;
+  z-index: 9999999;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+
+@media (min-width: 57em) {
+  .primary-header {
+    padding-block: 1rem;
+  }
+
+  .nav-list {
+    display: flex;
+    gap: clamp(0.5rem, 2vw, 1.5rem);
+    padding: 0;
+  }
+
+  .primary-navigation {
+    display: flex;
+    width: auto;
+    aspect-ratio: 0;
+    margin-inline: 0;
+    position: relative;
+    inset: 0;
+    background-color: #fafafa;
+    padding-block: 0;
+    border-radius: 0;
+    box-shadow: none;
+    z-index: 0;
+  }
+
+  .nav-list a {
+    position: relative;
+  }
+
+  .nav-list a:is(:hover, :focus) {
+    color: black;
+  }
+
+  .nav-list a::before {
+    transition: 300ms;
+    content: "";
+    position: absolute;
+    bottom: -35px;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background: var(--clr-gradient-primary);
+    opacity: 0;
+  }
+
+  .nav-list a:hover::before {
+    bottom: -15px;
+    opacity: 1;
+    color: black;
+  }
+
+  .mobile-nav-toggle {
+    display: none;
+  }
+
+  .right-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    position: relative;
+    top: 0;
+    width: fit-content;
+    outline: none;
+    z-index: 0;
+    background-color: transparent;
+  }
+
+  .right-nav > * {
+    color: black;
+    transition: all 350ms ease-in-out;
+  }
+
+  .right-nav > *:is(:hover, :focus-within) {
+    color: rgb(98, 239, 98);
+    cursor: pointer;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin: auto;
+    /* height: max-content; */
+    position: absolute;
+    top: 0;
+    left: 0%;
+    padding: 14px 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* outline: 2px solid red; */
+    z-index: 100000000000;
+    background-color: whitesmoke;
+  }
+
+  .search-items-container {
+    outline: 1px solid gray;
+    position: absolute;
+    top: 4rem;
+    width: 50%;
+    /* height: 100%; */
+    background-color: white;
+    border-radius: 1rem;
+  }
+
+  .search-items {
+    /* outline: 2px solid red; */
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 8px 1rem;
+    border-bottom: 1px solid gray;
+    border-radius: 1rem;
+
+    /* justify-content: space-between; */
+  }
+
+  .search-items img {
+    width: 2rem;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .search-items-deatils {
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+  }
+
+  .search-items-deatils h1 {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: black;
+  }
+  .search-items-deatils span {
+    font-size: 0.8rem;
+    color: gray;
+  }
+
+  .search-bar > input {
+    width: 60%;
+    height: 3rem;
+    margin-left: 8rem;
+    padding: 5px;
+    border-radius: 4rem;
+    outline: 2px solid rgb(28, 189, 136);
+    border: none;
+  }
+
+  .search-bar > :nth-child(2) {
+    width: 4rem;
+    aspect-ratio: 1/0.5;
+    outline: none;
+    background-color: rgb(50, 203, 152);
+    margin-inline: 1rem;
+    padding: 15px;
+    border-radius: 3rem;
+  }
+  .search-bar > :nth-child(3) {
+    width: 1.5rem;
+    aspect-ratio: 1/1.5;
+    outline: none;
+    border: none;
+    background: url(../assets/icon-close.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-inline: 1rem;
+    position: absolute;
+    right: 2rem;
+    top: 20px;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin: auto;
+    /* height: max-content; */
+    position: fixed;
+    top: 0;
+    left: 0%;
+    padding: 14px 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* outline: 2px solid red; */
+    z-index: 100000000000;
+    background-color: whitesmoke;
+  }
+
+  .search-items-container {
+    outline: 1px solid gray;
+    position: absolute;
+    top: 4rem;
+    width: 50%;
+    /* height: 100%; */
+    background-color: white;
+    border-radius: 1rem;
+  }
+
+  .search-items {
+    /* outline: 2px solid red; */
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 8px 1rem;
+    border-bottom: 1px solid gray;
+    border-radius: 1rem;
+
+    /* justify-content: space-between; */
+  }
+
+  .search-items img {
+    width: 2rem;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .search-items-deatils {
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+  }
+
+  .search-items-deatils h1 {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: black;
+  }
+  .search-items-deatils span {
+    font-size: 0.8rem;
+    color: gray;
+  }
+
+  .search-bar > input {
+    width: 60%;
+    height: 3rem;
+    margin-left: 8rem;
+    padding: 5px;
+    border-radius: 4rem;
+    outline: 2px solid rgb(28, 189, 136);
+    border: none;
+  }
+
+  .search-bar > :nth-child(2) {
+    width: 4rem;
+    aspect-ratio: 1/0.5;
+    outline: none;
+    background-color: rgb(50, 203, 152);
+    margin-inline: 1rem;
+    padding: 15px;
+    border-radius: 3rem;
+  }
+  .search-bar > :nth-child(3) {
+    width: 1.5rem;
+    aspect-ratio: 1/1.5;
+    outline: none;
+    border: none;
+    background: url(../assets/icon-close.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-inline: 1rem;
+    position: absolute;
+    right: 2rem;
+    top: 20px;
+  }
+}
+
+/* ----------------------------- */
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Link styles */
+.dropdown a {
+  text-decoration: none;
+  color: #333;
+  /* padding: 10px; */
+  display: inline-block;
+}
+
+/* Dropdown content styles (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+  /* Transition effect with 0.3s duration */
+  transition: opacity 600ms ease-in-out;
+}
+
+/* Dropdown option styles */
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+}
+
+/* Change color on hover for the dropdown options */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Display the dropdown content when hovering over the dropdown link */
+.dropdown:hover .dropdown-content {
+  display: block;
+  opacity: 1; /* Show the dropdown with a fade-in effect */
+}
+
+/* Dropdown options container styles (grid layout) */
+.dropdown-options {
+  display: grid;
+  grid-template-columns: repeat(
+    4,
+    1fr
+  ); /* Adjust the number of columns as needed */
+  gap: 5px; /* Adjust the gap between columns */
+}
+
+/* Dropdown option styles */
+.dropdown-options > div {
+  color: #333;
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Change color on hover for the dropdown options */
+.dropdown-options > div:hover {
+  background-color: #ddd;
+}
